@@ -2,6 +2,7 @@ package org.assessment.stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.assessment.framewokFunctions.utility.WebDriverUtil;
 import org.assessment.framewokFunctions.exceptionHandler.UserException;
 import org.assessment.pages.DashboardPage;
@@ -29,4 +30,8 @@ public class DashboardStepDef {
         dashboardPage.verifyWidgetsOfDashboardPage(widgets);
     }
 
+    @When("I click on the Logout button from the user profile menu")
+    public void iClickOnTheButtonFromTheUserProfileMenu() throws UserException {
+        dashboardPage.logout();
+    }
 }

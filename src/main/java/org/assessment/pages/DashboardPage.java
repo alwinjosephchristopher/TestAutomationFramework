@@ -9,15 +9,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class DashboardPage implements BaseTest {
 
     WebDriver driver;
 
     @FindBy(xpath = "//h6[text()='Dashboard']")
     WebElement dashboardLabel;
+
+    @FindBy(xpath = "//p[@class='oxd-userdropdown-name']")
+    WebElement userProfileDropdown;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    WebElement logout;
+
+
 
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
@@ -38,6 +43,12 @@ public class DashboardPage implements BaseTest {
             Assert.assertTrue(widgetElement.isDisplayed());
         }
         screenShotUtil.captureScreenshot("DashboardPage");
+    }
+
+    public void logout() throws UserException {
+        inputUtil.click(userProfileDropdown);
+        screenShotUtil.captureScreenshot("BEFORE_LOGOUT");
+        inputUtil.click(logout);
     }
 
 }

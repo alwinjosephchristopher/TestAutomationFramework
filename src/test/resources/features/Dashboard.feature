@@ -13,3 +13,10 @@ Feature: Dashboard Page functionality
   Scenario: Access dashboard without login
     Given I navigate to the dashboard page without logging in
     Then I should be redirected to the login page
+
+  Scenario: Logout functionality
+    Given I am on the login page
+    When I enter valid "Admin" and "admin123"
+    Then I should be redirected to the dashboard
+    When I click on the Logout button from the user profile menu
+    Then I should be redirected to the login page

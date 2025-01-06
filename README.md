@@ -85,13 +85,10 @@ mvn verify
 ### **Dashboard Page**
 - Positive scenarios:
     - Verify the presence of widgets and navigation menu modules.
-    - Navigation to modules like Admin and PIM.
 - Negative scenarios:
     - Accessing the dashboard without login.
     - Logout functionality verification.
-- UI validations:
-    - Responsiveness and interactivity of widgets and modules.
-
+  
 ---
 
 ## Design Choices
