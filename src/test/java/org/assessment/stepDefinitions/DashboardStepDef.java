@@ -9,6 +9,9 @@ import org.assessment.pages.DashboardPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+/**
+ * Step definitions related to the functionalities of Dashboard page
+ */
 public class DashboardStepDef {
 
     WebDriver driver = WebDriverUtil.getDriver();

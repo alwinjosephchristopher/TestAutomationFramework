@@ -23,6 +23,7 @@ public class Hooks {
         this.startTime = LocalDateTime.now();
         System.out.println("Scenario Started: "+scenario.getName());
     }
+
     @After
     public void after(Scenario scenario) throws UserException {
         WebDriverUtil.closeDriver();

@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+/**
+ * Page Object Model(POM) functionalities  related to the functionalities of Login page
+ */
 public class LoginPage implements BaseTest {
 
     WebDriver driver;
@@ -33,6 +36,10 @@ public class LoginPage implements BaseTest {
         PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Verifies if user had landed on login page
+     * @throws UserException for any failures
+     */
     public void verifyLoginPageDisplayed() throws UserException {
         screenShotUtil.captureScreenshot("LoginPage");
         assertTrue(usernameField.isDisplayed());
@@ -40,6 +47,12 @@ public class LoginPage implements BaseTest {
         assertTrue(loginButton.isDisplayed());
     }
 
+    /**
+     * This generic function helps to enter values in the fields of login page
+     * @param field label of field
+     * @param value value to be entered
+     * @throws UserException
+     */
     public void enterDetails(String field, String value) throws UserException {
         switch (field.toLowerCase().trim()) {
             case "username" :
@@ -49,10 +62,15 @@ public class LoginPage implements BaseTest {
                 inputUtil.enterText(passwordField, value);
                 break;
             default:
-                throw new UserException("Invalid field to enter data in Login page");
+                throw new UserException("Invalid field to enter data in Login page, field=" + field);
         }
     }
 
+    /**
+     * Performs user required action on login page
+     * @param action to be performed like clicking login or forgot password button
+     * @throws UserException
+     */
     public void performAction(String action) throws UserException {
         switch (action.toLowerCase().trim()) {
             case "login" :
@@ -66,6 +84,11 @@ public class LoginPage implements BaseTest {
         }
     }
 
+    /**
+     * enters credentials and performs login action
+     * @param username username
+     * @param password password
+     */
     public void loginWithCredentials(String username, String password) throws UserException {
         enterDetails("username", username);
         enterDetails("password", password);

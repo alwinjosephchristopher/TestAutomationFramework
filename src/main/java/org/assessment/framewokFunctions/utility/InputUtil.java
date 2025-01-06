@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+/**
+ * This class provides different kinds of input actions user can do in Web UI using selenium web driver.
+ * these methods are reusable for any webpages
+ */
 public class InputUtil extends WebDriverUtil{
 
     /** Method to enter text into text field
@@ -31,14 +35,13 @@ public class InputUtil extends WebDriverUtil{
         button.click();
     }
 
-    public void javaScriptClick(WebElement element){
+    public void javaScriptClick(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();",element);
     }
 
-    public void doubleClick(WebElement element)
-    {
+    public void doubleClick(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
 
         Actions action = new Actions(driver);
@@ -60,8 +63,7 @@ public class InputUtil extends WebDriverUtil{
             selectList.selectByVisibleText(option);
     }
 
-    public void deselectOptionFromDropdown(WebElement dropdown, String optionBy, String option)
-    {
+    public void deselectOptionFromDropdown(WebElement dropdown, String optionBy, String option) {
         wait.until(ExpectedConditions.visibilityOf(dropdown));
         Select selectList = new Select(dropdown);
 
@@ -73,34 +75,29 @@ public class InputUtil extends WebDriverUtil{
             selectList.deselectByVisibleText(option);
     }
 
-    public void checkCheckbox(WebElement checkbox)
-    {
+    public void checkCheckbox(WebElement checkbox)  {
         wait.until(ExpectedConditions.visibilityOf(checkbox));
         if (!checkbox.isSelected())
             checkbox.click();
     }
 
-    public void uncheckCheckbox(WebElement checkbox)
-    {
+    public void uncheckCheckbox(WebElement checkbox) {
         wait.until(ExpectedConditions.visibilityOf(checkbox));
         if (checkbox.isSelected())
             checkbox.click();
     }
 
-    public void toggleCheckbox(WebElement checkbox)
-    {
+    public void toggleCheckbox(WebElement checkbox) {
         wait.until(ExpectedConditions.visibilityOf(checkbox)).click();
     }
 
-    public void selectRadioButton(WebElement radioButton)
-    {
+    public void selectRadioButton(WebElement radioButton) {
         wait.until(ExpectedConditions.visibilityOf(radioButton));
         if(!radioButton.isSelected())
             radioButton.click();
     }
 
-    public void selectOptionFromRadioButtonGroup(By locator, String selectBy, String option)
-    {
+    public void selectOptionFromRadioButtonGroup(By locator, String selectBy, String option)  {
         List<WebElement> radioButtonGroup = driver.findElements(locator);
         for(WebElement rb : radioButtonGroup)
         {
@@ -117,8 +114,7 @@ public class InputUtil extends WebDriverUtil{
         }
     }
 
-    public void handleAlert(String decision)
-    {
+    public void handleAlert(String decision)  {
         if(decision.equals("accept"))
             driver.switchTo().alert().accept();
         else

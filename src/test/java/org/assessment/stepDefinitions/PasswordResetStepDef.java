@@ -7,6 +7,9 @@ import org.assessment.framewokFunctions.utility.WebDriverUtil;
 import org.assessment.pages.PasswordResetPage;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * Step definitions related to the functionalities of Password Reset page
+ */
 public class PasswordResetStepDef {
 
     WebDriver driver = WebDriverUtil.getDriver();

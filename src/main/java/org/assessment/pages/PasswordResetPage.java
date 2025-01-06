@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+/**
+ * Page Object Model(POM) functionalities  related to the functionalities of Password Reset page
+ */
 public class PasswordResetPage implements BaseTest {
     WebDriver driver;
 

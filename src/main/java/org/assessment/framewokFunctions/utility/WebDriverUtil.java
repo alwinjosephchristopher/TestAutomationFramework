@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Webdriver util class supplies the driver needed for test execution
+ */
 public class WebDriverUtil {
     static WebDriverWait wait;
     static WebDriver driver;

@@ -11,6 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Step definitions related to the functionalities of Login page
+ */
 public class LoginPageStepDef {
 
     private static final Logger log = LoggerFactory.getLogger(LoginPageStepDef.class);

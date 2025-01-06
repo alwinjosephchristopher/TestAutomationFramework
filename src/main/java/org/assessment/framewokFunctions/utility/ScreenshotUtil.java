@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class ScreenshotUtil extends WebDriverUtil{
     public final String OUTPUT_DIR = System.getProperty("user.dir") + "/target/screenshots/";
 
-    /** Method to take screen shot and save in ./Screenshots folder*/
+    /** Method to take screen shot and save in .target/Screenshots folder*/
     public void captureScreenshot(String page) throws UserException {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");

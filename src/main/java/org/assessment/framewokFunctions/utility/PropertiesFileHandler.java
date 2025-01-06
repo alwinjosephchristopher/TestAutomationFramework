@@ -11,7 +11,7 @@ import java.util.Properties;
 
 /**
  * Property file handler. this helps to load and get value of keys from properties file in src/main/resources/config folders
- * works wih .properties files
+ * works with .properties files
  * @author Alwin Joseph
  *
  */

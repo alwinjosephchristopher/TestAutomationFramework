@@ -9,6 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+/**
+ * Page Object Model(POM) functionalities  related to the functionalities of Dashboard page
+ */
 public class DashboardPage implements BaseTest {
 
     WebDriver driver;
@@ -22,8 +25,6 @@ public class DashboardPage implements BaseTest {
     @FindBy(xpath = "//a[text()='Logout']")
     WebElement logout;
 
-
-
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -33,6 +34,10 @@ public class DashboardPage implements BaseTest {
         Assert.assertTrue(dashboardLabel.isDisplayed());
     }
 
+    /**
+     * validates whether all widgets provided in the test data separated by comma(,) is present in the Dashboard page
+     * @param widgets widget name separated by comma
+     */
     public void verifyWidgetsOfDashboardPage(String widgets) throws UserException {
         String[] widgetHeaders = widgets.split(",");
 
