@@ -125,7 +125,7 @@ Given more time, the following enhancements can be made:
     - Optimize test execution time by running tests in parallel.
    
 5. **Data-Driven Testing**:
-   - Use external files (e.g., Excel, CSV) for test data management.
+   - Use external files (e.g., Excel, CSV, JSON) for test data management.
 
 6. **Utility methods**:
     - Extend the framework functionalities to support Database connections like SQL,No-sql(mongo-db)
