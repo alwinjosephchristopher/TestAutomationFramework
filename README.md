@@ -53,7 +53,7 @@ This repository contains a Test Automation Framework for testing the Login and D
 4. **Run Tests**
    Use the following command to run the tests:
    ```bash
-   mvn test
+   mvn clean test
    ```
 
 ---

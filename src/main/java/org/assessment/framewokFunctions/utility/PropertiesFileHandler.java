@@ -4,8 +4,8 @@ package org.assessment.framewokFunctions.utility;
 import org.assessment.framewokFunctions.exceptionHandler.UserException;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 
@@ -17,18 +17,17 @@ import java.util.Properties;
  */
 public class PropertiesFileHandler {
 
-    private final String BASE_PATH = System.getProperty("user.dir")+"/src/main/resources/config";
-    private Properties prop;
+    private final Properties prop;
 
     /**
-     * Constructor intializes path and throws error if file is not found or any loading error
-     * @param fileName
-     * @throws UserException
+     * Constructor initializes path and throws error if file is not found or any loading error
+     * @param fileName filename
      */
     public PropertiesFileHandler(String fileName) throws UserException {
         prop = new Properties();
         try {
-            prop.load(new FileInputStream(BASE_PATH+File.separator+fileName));
+            String BASE_PATH = System.getProperty("user.dir") + "/src/main/resources/config";
+            prop.load(Files.newInputStream(Paths.get(BASE_PATH + File.separator + fileName)));
         }catch(Exception e) {
             throw new UserException("Exception occured: "+e.getLocalizedMessage());
         }
@@ -36,9 +35,8 @@ public class PropertiesFileHandler {
 
     /**
      * gets the value of key passed.
-     * @param key
-     * @return
-     * @throws UserException
+     * @param key for which value ought to be found
+     * @return value of key
      */
     public String getValue(String key) throws UserException {
         String value;

@@ -18,8 +18,7 @@ public class CucumberReportGenerator {
     public String projectName = "Test Automation Framework";
 
     /**
-     * Function generates report
-     * @throws UserException
+     * Function generates cucumber pretty report from json report of TestNg
      */
     public void generateReport() throws UserException {
         // get list of json files

@@ -29,7 +29,7 @@ public class DashboardPage implements BaseTest {
     }
 
     public void verifyWidgetsOfDashboardPage(String widgets) throws UserException {
-        List<String> widgetHeaders = Arrays.asList(widgets.split(","));
+        String[] widgetHeaders = widgets.split(",");
 
         for (String widget : widgetHeaders) {
             String xpath = "//div[contains(@class,'orangehrm-dashboard-grid')]//p[normalize-space()='" + widget.trim() + "']";

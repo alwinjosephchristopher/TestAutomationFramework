@@ -9,10 +9,8 @@ import java.util.List;
 public class FileUtility {
 
     /**
-     * helps to retrieve list of required files
-     * @return
-     * @throws {@link UserException
-    }
+     * helps to retrieve list of required files of format from a directory
+     * @return list of absolute file paths
      */
     public List<String> getAllFiles(String directory,String format) throws UserException {
         List<String> requiredFiles = new ArrayList<>();

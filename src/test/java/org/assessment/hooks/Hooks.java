@@ -17,7 +17,6 @@ import org.assessment.framewokFunctions.utility.WebDriverUtil;
 public class Hooks {
     public final String SCREENSHOT_DIR = System.getProperty("user.dir") + "/target/screenshots/";
     private LocalDateTime startTime;
-    private LocalDateTime endTime;
 
     @Before
     public void before(Scenario scenario) {
@@ -27,7 +26,7 @@ public class Hooks {
     @After
     public void after(Scenario scenario) throws UserException {
         WebDriverUtil.closeDriver();
-        this.endTime = LocalDateTime.now();
+        LocalDateTime endTime = LocalDateTime.now();
         Duration duration = Duration.  between(startTime, endTime);
         System.out.println("##########Total Execution Time: " + duration.toHours() + ":"+
                 duration.toMinutes() + ":" + duration.getSeconds());

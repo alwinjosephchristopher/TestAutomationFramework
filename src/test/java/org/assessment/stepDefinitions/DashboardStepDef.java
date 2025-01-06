@@ -1,7 +1,6 @@
 package org.assessment.stepDefinitions;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.assessment.framewokFunctions.utility.WebDriverUtil;
 import org.assessment.framewokFunctions.exceptionHandler.UserException;

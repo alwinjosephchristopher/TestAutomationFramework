@@ -6,15 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LoginPage implements BaseTest {
 
-    private static final Logger log = LoggerFactory.getLogger(LoginPage.class);
     WebDriver driver;
     @FindBy(name = "username")
     WebElement usernameField;
