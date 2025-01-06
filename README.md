@@ -127,4 +127,9 @@ Given more time, the following enhancements can be made:
 5. **Data-Driven Testing**:
    - Use external files (e.g., Excel, CSV) for test data management.
 
+6. **Utility methods**:
+    - Extend the framework functionalities to support Database connections like SQL,No-sql(mongo-db)
+    - Message queue services like RabbitMQ, Active MQ, Kafka
+    - Api Testing supports with Rest Assured library utils
+
 ---
