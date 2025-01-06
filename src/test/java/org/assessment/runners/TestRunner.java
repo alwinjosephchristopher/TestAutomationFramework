@@ -3,18 +3,17 @@ package org.assessment.runners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.assessment.reporting.CucumberReportGenerator;
+import org.assessment.framewokFunctions.exceptionHandler.UserException;
+import org.assessment.framewokFunctions.reporting.CucumberReportGenerator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 @CucumberOptions(
         features = {"src/test/resources/features"},
-        //tags = "as",
-        glue={"org.assessment.stepDefinitions"},
+        tags = "@test",
+        glue={"org.assessment.stepDefinitions","org.assessment.hooks"},
         plugin = {"pretty",
-                "json:target/cucumber-report.json",
-                "junit:target/cucumber.xml"
-        }
+                "json:target/cucumber-reports/CucumberTestReport.json"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
@@ -24,7 +23,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     }
 
     @AfterClass
-    public static void teardown() {
-        CucumberReportGenerator.generateReport();
+    public static void teardown() throws UserException {
+        //CucumberReportGenerator reportGenerator = new CucumberReportGenerator();
+        //reportGenerator.generateReport();
     }
 }
